@@ -30,6 +30,9 @@ I thought I'd document my configuration and setup here, in case anyone finds it 
 ## Physical Assembly
 
 ### OLED Screen
+
+<img src="https://m.media-amazon.com/images/I/61NS3MQntFL._AC_SL1200_.jpg" width="200" />
+
 The OLED screen came bare, so I soldered the 4-pin connector so I could use the female to female GPIO cables. In hindsight I'd use [right-angle pins](https://www.amazon.co.uk/dp/B01461DQ6S) on the OLED screen so it doesn't foul the internal cabling.
 
 Connect the OLED display to the Raspberry Pi:
@@ -40,6 +43,8 @@ Connect the OLED display to the Raspberry Pi:
 
 ### Raspberry Pi Power
 
+<img src="https://cdn.tindiemedia.com/images/resize/Fpc0GxVPoO_GJwMBvluj-nA2qvo=/p/fit-in/653x435/filters:fill(fff)/i/820311/products/2020-12-10T10%3A16%3A20.202Z-USB-C_PWR%20Splitter5V-2.jpg?1607566597" width="200" />  
+
 You can power the Raspberry Pi directly from your host device, using a cable plugged into the power/OTG port on the Raspberry Pi... however if your host device loses power for some reason, then your PiKVM will also lose power... not what you might want.
 
 If you power the Pi separately, but then connect a USB cable to your host device separately, then you might get power passed to the Raspberry Pi down the USB port and this could damage your Pi. The easiest way to avoid this is with a USB-C power splitter. This takes two inputs, one data and one power, and then passes them both on safely to your Pi power/OTG port by stripping the power lines from your _data_ USB connection.
@@ -48,9 +53,14 @@ There's not a lot of room in the case and the distance from the USB-C port on th
 
 ### HDMI CSI bridge
 
+<img src="https://m.media-amazon.com/images/I/610O5VfhWML._AC_SX679_.jpg" width="200" />  
+
 Originally I used the [Geekworm HDMI-CSI bridge](https://www.amazon.co.uk/gp/product/B0899L6ZXZ/) and it worked very well, however it doesn't physically fit into the case I had 3d printed. So, instead I ordered a new [Waveshare bridge](https://www.amazon.co.uk/gp/product/B08TBD68MH/) and this works and fits just fine... although the cable is a bit long. Fit as per the instructions.
 
 ### Case
+
+<img src="https://cdn.thingiverse.com/assets/8d/19/c3/f3/f7/large_display_pikvm-case_2022-jan-16_07-36-58pm-000_customizedv.png" width="200" />  
+
 I had the case above 3D printed by a service in the UK (SurfaceScan.co.uk), I chose to use PETG rather than PLA to give it a little extra heat resistance with a layer thickness of 200.0 µm and 50% infill. Later I will learn what this means.
 
 Assembling the items into the case takes a bit of doing as it's a snug fit. Try to keep the cables short enough if you can to increase airflow and make the likelyhood of trapping anything less.
@@ -58,6 +68,9 @@ Assembling the items into the case takes a bit of doing as it's a snug fit. Try 
 Add the case fan (as below), then slot each of the components into the case in their appropriate slots. The OLED screen might give you some trouble and try to fall out of it's place (again, might be easier with right-angled connectors?). Maybe a small amount of blu-tack or sugaru would help to hold it. Once the spaghetti of wires is tamed, push the two pieces together and **gently** screw in the case screws. These will be tight, go gently to avoid cracking the case. There are no inserts in this, so repeated opening of the case will cause it to loosen.
 
 ### Case fan
+
+<img src="https://m.media-amazon.com/images/I/51nl7x3rx-S._SL1000_.jpg" width="200" />  
+
 Add the fan to the case using the supplied nuts and bolts (shorter bolts would be ideal but they didn't foul anything). Wire the pins to the Raspberry Pi as below:
 * Red - Pin 4
 * Black - Pin 6
@@ -119,7 +132,7 @@ The webUI is likely showing your device name as `localhost@localdomain`. You can
 3. Change the filesystem to read-write mode with the command: ```rw```
 4. Edit the file: ```nano /etc/kvmd/meta.yaml``` and change the info after `host:` to reflect what you want
 5. Switch to read-only mode using the command: ```ro```
-6. Reboot the device
+6. Restart the service using ```systemctl restart kvmd```
 
 ### (Optional) HDMI KVM Control
 
@@ -183,9 +196,11 @@ Instructions are found in the [official documentation](https://docs.pikvm.org/mu
                 - ["#Input 4", ch3_led, ch3_button]
    ```
 5. Switch to read-only mode using the command: ```ro```
-6. Reboot the device
+6. Restart the service using ```systemctl restart kvmd```
 
 ### (Optional) Remove ATX Controls
+
+<img src="https://docs.pikvm.org/webui/ATX.jpg" width="200" />  
 
 As I'm using a number of devices via the HDMI KVM, and my equipment doesn't support ATX controls, I've disabled them in the WebUI to avoid distractions. I found the instructions [here](https://www.dzombak.com/blog/2021/11/PiKVM-Build.html) but be sure to correctly format the resulting file. Incorrect edits will show unexpected results.
 
@@ -199,7 +214,7 @@ As I'm using a number of devices via the HDMI KVM, and my equipment doesn't supp
         type: disabled
    ```
 5. Switch to read-only mode using the command: ```ro```
-6. Reboot the device
+6. Restart the service using ```systemctl restart kvmd```
 
 > [!WARNING]
 > If you've already added the HDMI KVM switching above, do **not** add `kvmd:` a second time... the full file should look like this:
