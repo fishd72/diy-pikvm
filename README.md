@@ -35,6 +35,8 @@ I thought I'd document my configuration and setup here, in case anyone finds it 
 
 The OLED screen came bare, so I soldered the 4-pin connector so I could use the female to female GPIO cables. In hindsight I'd use [right-angle pins](https://www.amazon.co.uk/dp/B01461DQ6S) on the OLED screen so it doesn't foul the internal cabling.
 
+**EDIT:** I relented and added the right angle connector. This worked much better.
+
 Connect the OLED display to the Raspberry Pi:
 * GND - Pin 9
 * VCC - Pin 1
@@ -55,7 +57,9 @@ There's not a lot of room in the case and the distance from the USB-C port on th
 
 <img src="https://m.media-amazon.com/images/I/610O5VfhWML._AC_SX679_.jpg" width="200" />  
 
-Originally I used the [Geekworm HDMI-CSI bridge](https://www.amazon.co.uk/gp/product/B0899L6ZXZ/) and it worked very well, however it doesn't physically fit into the case I had 3d printed. So, instead I ordered a new [Waveshare bridge](https://www.amazon.co.uk/gp/product/B08TBD68MH/) and this works and fits just fine... although the cable is a bit long. Fit as per the instructions.
+Originally I used the [Geekworm HDMI-CSI bridge](https://www.amazon.co.uk/gp/product/B0899L6ZXZ/) and it worked very well, however it doesn't physically fit into the case I had 3d printed. So, instead I ordered a new [Waveshare bridge](https://www.amazon.co.uk/gp/product/B08TBD68MH/) and this works and fits just fine... although the cable is a bit long. Fit as per the instructions. 
+
+**EDIT:** I see [thepihut](https://thepihut.com/search?q=Flex+Cable+for+Raspberry+Pi+Camera&narrow_by=&sort_by=relevency&page=1) do 50mm or 100mm FPC cables (instead of the stock 150mm one) so I might try these.
 
 ### Case
 
@@ -75,6 +79,8 @@ Add the fan to the case using the supplied nuts and bolts (shorter bolts would b
 * Red - Pin 4
 * Black - Pin 6
 * Blue - Pin 32
+
+**EDIT:** I replaced the stock M3 x 16 silver screws that came with the fans with M3 x 12 black screws, these do not protrude from the fan shroud so make it a bit easier inside for cabling.
 
 ### Connections
 
