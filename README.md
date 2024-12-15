@@ -23,6 +23,7 @@ I thought I'd document my configuration and setup here, in case anyone finds it 
 * USB-C male to USB-A male (For connecting to the target device)
 * USB-A male to USB-A micro male (optional, for connecting to a multi-port KVM)
 * [Multi-port KVM switch](https://www.amazon.co.uk/dp/B095JN4CJY/) (optional, for controlling multiple devices)
+* [Smart Power Strip](https://www.amazon.co.uk/dp/B0DBQ26ZNL) (optional, in place of ATX controls, can use this to restart Mini-PCs)
 * Cables for connecting the OLED display (I used GPIO cables I had lying around)
 * SD Card (I used a 32Gb card to allow it to hold several ISO images)
 
