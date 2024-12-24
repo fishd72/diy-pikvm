@@ -14,6 +14,7 @@ I thought I'd document my configuration and setup here, in case anyone finds it 
 ## Items needed:
 * [Raspberry Pi 4](https://shop.pimoroni.com/products/raspberry-pi-4?variant=29157087412307) (2Gb model is sufficient)
 * [HDMI - CSI bridge](https://www.amazon.co.uk/dp/B08TBD68MH/)
+* [90mm FPC connector](https://www.amazon.co.uk/dp/B019BRWHQM)
 * [USB C Power splitter](https://www.tindie.com/products/8086net/usb-cpwr-splitter/)
 * [I2C OLED Screen](https://www.amazon.co.uk/dp/B07MHGPNVT/)
 * [Case](https://www.thingiverse.com/thing:5203114)
@@ -62,6 +63,7 @@ Originally I used the [Geekworm HDMI-CSI bridge](https://www.amazon.co.uk/gp/pro
 
 **EDIT:** I see [thepihut](https://thepihut.com/search?q=Flex+Cable+for+Raspberry+Pi+Camera&narrow_by=&sort_by=relevency&page=1) do 50mm or 100mm FPC cables (instead of the stock 150mm one) so I might try these.
 **FURTHER EDIT:** So, I tried a 50mm FPC for this aaaaaannnndddd.... it isn't long enough. 90mm version on it's way.
+**ADDITIONAL FURTHER EDIT:** 90mm version works perfectly, it's still a bit too long but better than the 150mm version 
 
 ### Case
 
